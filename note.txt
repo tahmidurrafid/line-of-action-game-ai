@@ -1,0 +1,41 @@
+EnrollCourse
+
+TakeCourse
+    User -> showMaterial() -> CourseMaterials
+    User-> AccessCourse -> Course -> isEnrolled()
+        if(HasAccessToCourse)
+            Loop until All Lessons are finished
+            User-> CompleteLesson -> CourseMaterial 
+            User-> TakeQuiz() -> CourseMaterial() -> GetScore()
+            User-> SubmitAssignment() -> CourseMaterial() -> 
+                If(canBegradedautomatically())
+                    Evaluate() -> AssignmentAutograder
+                Else 
+                    Evaluate() -> Instructor
+            Course() -> GetCertificate() -> User
+AddCourse
+    Instructor -> new Course() -> Successfull -> Instructor
+    Instructor -> addCourseDetails() -> Course
+    loop
+        Inctructor -> addLessons
+        set Quiz()
+    Instructor -> setAssignment() -> CourseMaterials
+
+BrowseCourse
+    User -> Select Category or
+	    Search Courses -> CoursesUI ->
+	If(user chooses to Search course) -> SearchUI ->
+		Ask To Add Filters -> Response()
+	else if(user wants to see recommended course)
+		CoursesUI -> getRecommendedCourese()
+	else if(ViewEnrolledCourse())
+		
+		
+		
+ManageDiscussion
+    User1 -> new  -> Thread
+    User1 -> SelectCourse() -> Thread
+    User1 -> SelectTopic() -> Thread
+    User1 -> SubmitForApproval() -> Thread -> Instructor -> 
+    User2 -> Comment() -> Thread
+    User3 -> Upvote() Thread 
